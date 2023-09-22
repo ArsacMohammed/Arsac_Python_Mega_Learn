@@ -1,1 +1,14 @@
 Python Basics Start 
+
+
+
+In python console - make use of dir(str) or dr("dsafgdg") shows all method that are present for the string in  python .
+
+help("arsac".capitalize())    --- shows the use of the capitalize function in python.
+
+
+In python there is no switch case format instead match case is present .
+
+Instead of using default in java , we use case_  in python.
+
+We can use logical operator in python match case syntax
