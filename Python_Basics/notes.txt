@@ -12,3 +12,8 @@ In python there is no switch case format instead match case is present .
 Instead of using default in java , we use case_  in python.
 
 We can use logical operator in python match case syntax
+
+
+f-strings are also known as formatted strings
+
+we can also use string inside of the enumerate functions
