@@ -1,11 +1,18 @@
-todos=[]
+
+#storing the list in the text files.
 while True:
     user_actions= input ("Type add ,edit ,show ,complete or exit ").strip()
-#now adding enumerate function for the for loop
+
     match user_actions:
         case "add":
-            todo= input ("Enter a todo: ")
+            file=open("todo.txt","r")
+            todos=file.readlines()
+            file.close()  # the above three lines move the cursor to the end of the text files and write funciton in below code will worte the input string to the text ,otherwise the text file will get overrideen by the new input and previous are all lost .
+            todo= input ("Enter a todo: ")+"\n"
             todos.append(todo)
+            file=open("todo.txt","w")
+            file.writelines(todos)
+            file.close()  # these are important prevent resource leakage.
         case "show":
             for index ,todo in enumerate (todos):
                 todo = todo.title()
@@ -23,6 +30,3 @@ while True:
 print("bye")
 
 
-# 0 - Clean
-# 1 - Throw
-# 2 - Move   these are the output and have spaces even though is not given in the code.fstring can solve that problem.
