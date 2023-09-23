@@ -14,9 +14,22 @@ while True:
             file.writelines(todos)
             file.close()  # these are important prevent resource leakage.
         case "show":
+            file = open("todo.txt","r")
+            todos= file.readlines()
+            file.close()
             for index ,todo in enumerate (todos):
                 todo = todo.title()
                 print(f"{index + 1}-{todo}")
+                #this is the output and has  extra line space vbecause the print provide its own linedpace.
+                # 1 - Clean
+                #
+                # 2 - Wipe
+                #
+                # 3 - Shower
+                #
+                # 4 - Move
+                #
+                # 5 - Prepare
 
         case "edit":
             number = int(input ("enter the number of the todos to edit :  "))
