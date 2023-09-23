@@ -1,3 +1,5 @@
 clean
-play 
+give choco
 take out trash
+buy flowers
+get me a car
