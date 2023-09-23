@@ -1,4 +1,3 @@
-pack
 clean
-move
-add
+move away
+play 

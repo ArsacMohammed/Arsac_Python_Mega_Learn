@@ -23,11 +23,24 @@ while True:
                 print(f"{index + 1}-{todo}")
         case "edit":
             number = int(input ("enter the number of the todos to edit :  "))
-            edited_todo= input ("enter the todo for the new todo: ")
-            todos[number-1]=edited_todo
+
+            with open("todo.txt","r") as file:
+                todos = file.readlines()
+            edited_todo = input("enter the todo for the new todo: ") +"\n"
+            todos[number - 1] = edited_todo
+            with open("todo.txt","w") as file:
+                file.writelines(todos)
+
         case "complete":
             number = int(input ("which one do you wanna remove , number only"))
+            with open("todo.txt","r") as file:
+                todos = file.readlines()
             todos.pop(number -1 )
+
+            with open("todo.txt","w") as file:
+                file.writelines(todos)
+
+
         case "exit":
             break
 print("bye")
