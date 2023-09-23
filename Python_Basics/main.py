@@ -5,37 +5,22 @@ while True:
 
     match user_actions:
         case "add":
-            file=open("todo.txt","r")
-            todos=file.readlines()
-            file.close()  # the above three lines move the cursor to the end of the text files and write funciton in below code will worte the input string to the text ,otherwise the text file will get overrideen by the new input and previous are all lost .
+            with open("todo.txt","r") as file:
+                todos = file.readlines()
+
             todo= input ("Enter a todo: ")+"\n"
             todos.append(todo)
-            file=open("todo.txt","w")
-            file.writelines(todos)
-            file.close()  # these are important prevent resource leakage.
+
+            with open("todo.txt", "w") as file:
+                file.writelines(todos)
         case "show":
-            file = open("todo.txt","r")
-            todos= file.readlines()
-            file.close()
+            with open("todo.txt","r") as file:
+                todos = file.readlines()
 
-
-            # to  remove the white spaces we ll use list comprehension
-            #new_todos=[item.strip("\n") for item in todos] without line 25 and change new_todos in line 24
             for index ,todo in enumerate (todos):
                 todo=todo.strip("\n")
                 todo = todo.title()
                 print(f"{index + 1}-{todo}")
-                #this is the output and has  extra line space vbecause the print provide its own linedpace.
-                # 1 - Clean
-                #
-                # 2 - Wipe
-                #
-                # 3 - Shower
-                #
-                # 4 - Move
-                #
-                # 5 - Prepare
-
         case "edit":
             number = int(input ("enter the number of the todos to edit :  "))
             edited_todo= input ("enter the todo for the new todo: ")

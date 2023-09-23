@@ -1,5 +1,4 @@
+pack
 clean
-wipe
-shower
 move
-prepare
+add
