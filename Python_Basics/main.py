@@ -17,7 +17,12 @@ while True:
             file = open("todo.txt","r")
             todos= file.readlines()
             file.close()
+
+
+            # to  remove the white spaces we ll use list comprehension
+            #new_todos=[item.strip("\n") for item in todos] without line 25 and change new_todos in line 24
             for index ,todo in enumerate (todos):
+                todo=todo.strip("\n")
                 todo = todo.title()
                 print(f"{index + 1}-{todo}")
                 #this is the output and has  extra line space vbecause the print provide its own linedpace.
