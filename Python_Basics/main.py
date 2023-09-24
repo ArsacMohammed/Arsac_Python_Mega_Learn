@@ -59,3 +59,4 @@ while True:
     else:
         print("Invalid command ... Try Again ")
 print("bye")
+### command line code for todo program is done moving to build the graphical user interface.
