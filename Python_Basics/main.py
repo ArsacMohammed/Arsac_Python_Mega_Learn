@@ -1,8 +1,4 @@
-def get_todo():
-    with open("todo.txt", "r") as file:
-        todos = file.readlines()
-        return todos
-
+import functions
 
 while True:
     user_actions = input("Type add ,edit ,show ,complete or exit ").strip()
@@ -12,15 +8,13 @@ while True:
     if user_actions.startswith("add"):
 
         todo = user_actions[4:] + "\n"
-        todos = get_todo()
+        todos = functions.get_todo()
         todos.append(todo)
-
-        with open("todo.txt", "w") as file:
-            file.writelines(todos)
+        functions.write_todos(todos)
 
 
     elif user_actions.startswith("show"):
-        todos = get_todo()
+        todos = functions.get_todo()
 
         for index, todo in enumerate(todos):
             todo = todo.strip("\n")
@@ -33,11 +27,10 @@ while True:
         try:
             number = int(user_actions[5:])
 
-            todos = get_todo()
+            todos = functions.get_todo()
             edited_todo = input("enter the todo for the new todo: ") + "\n"
             todos[number - 1] = edited_todo
-            with open("todo.txt", "w") as file:
-                file.writelines(todos)
+            functions.write_todos(todos)
         except ValueError:
             print("your command is not valid ")
             continue
@@ -47,11 +40,10 @@ while True:
     elif user_actions.startswith("complete"):
         try:
             number = int(user_actions[9:])
-            todos = get_todo()
+            todos = functions.get_todo()
             todos.pop(number - 1)
 
-            with open("todo.txt", "w") as file:
-                file.writelines(todos)
+            functions.write_todos(todos)
         except IndexError:
             print("There is no element with that number .")
             continue
