@@ -5,5 +5,4 @@ go hiking
 go to the park
 park my car
 buy groceries
-eat food
 add a new file
