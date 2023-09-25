@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+df=pd.read_csv("data.csv",sep=";")
 st.set_page_config(layout="wide")
 col1,col2=st.columns(2)
 with col1:
@@ -14,3 +16,18 @@ Welcome to my programming portfolio! I'm a highly experienced software developer
 
 content = """Here you can find  some of the apps that I have built in python """
 st.write(content)
+
+col3,empty_col,col4=st.columns([1.5,0.5,1.5])
+with col3:
+   for index,row in df[0:10].iterrows():
+       st.write(index,row["title"])
+       st.write(row["description"])
+       st.image("images/"+row["image"])
+       st.write(f"Source Code: ({row['url']})")
+
+with col4:
+    for index, row in df[10:].iterrows():
+        st.write(index, row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"])
+        st.write(f"Source Code: ({row['url']})")
