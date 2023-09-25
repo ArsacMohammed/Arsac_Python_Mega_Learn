@@ -24,7 +24,7 @@ while True:
     match event:
         case "Add":
             todos = functions.get_todo()
-            new_todo = values["todo"]
+            new_todo = values["todo"] +"\n"
             todos.append(new_todo)
             functions.write_todos(todos)
             window["todos"].update(values=todos)
@@ -42,7 +42,10 @@ while True:
 
             # to print the list  in the list box in the gui ,use input text instance by "todo" key
         case "todos":
-            window["todo"].update(value=values["todos"][0])
+            try:
+                window["todo"].update(value=values["todos"][0])
+            except IndexError:
+                sg.popup("There is no list item present ")
 
         case "Complete":
             try:
@@ -54,6 +57,7 @@ while True:
                 window['todo'].update(value="")
             except IndexError:
                 sg.popup("There is no element selected... please select one")
+
         case "Exit":
             break
         case sg.WIN_CLOSED:
