@@ -1,16 +1,10 @@
-# This is a sample Python script.
+import streamlit as st
+st.set_page_config(layout="wide")  # web page get adjusted even when changing the webpage size and fits the screen
+col1,col2=st.columns(2) # divide the web app  by two columns
+with col1:
+    st.image("images/photo.png")
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+with col2:
+   st.title("Mohammed Arsac")
+   comment="""I am  a  Python Programmer and an Entrepreneur """ # this is docstring used to have big content and can also have multiple lines.
+   st.info (comment)
