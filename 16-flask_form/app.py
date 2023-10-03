@@ -54,3 +54,6 @@ if __name__ == "__main__":
         if not os.path.exists(app.config["SQLALCHEMY_DATABASE_URI"]):
             db.create_all()
             app.run(debug=True, port=5000)
+
+
+##completed the app
