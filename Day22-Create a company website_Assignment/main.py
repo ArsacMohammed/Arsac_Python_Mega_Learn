@@ -14,7 +14,8 @@ Welcome to Night Striker, where the road to automotive perfection begins."""
 st.write(content)
 
 st.subheader("Our Team")
-col1,empty_col1, col2,empty_col2, col3 = st.columns([1.5,0.3,1.5,0.3,1.7])
+col1,empty_col1, col2,empty_col2, col3 = st.columns([1.5,0.3,1.5,0.3
+                                                        ,1.7])
 
 with col1:
     for _,row in df[:4].iterrows():
