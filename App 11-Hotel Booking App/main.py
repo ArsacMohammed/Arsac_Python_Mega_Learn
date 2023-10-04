@@ -82,3 +82,6 @@ if hotel.available():
         print("There is something wrong with your card....Try again")
 else:
     print("Hotel is not free!!")
+
+
+#  completed
